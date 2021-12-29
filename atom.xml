@@ -6,7 +6,7 @@
   <link href="http://guiloual.github.io/atom.xml" rel="self"/>
   
   <link href="http://guiloual.github.io/"/>
-  <updated>2021-12-28T14:54:43.891Z</updated>
+  <updated>2021-12-29T04:43:12.264Z</updated>
   <id>http://guiloual.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习</title>
+    <link href="http://guiloual.github.io/2021/12/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://guiloual.github.io/2021/12/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</id>
+    <published>2021-12-29T02:46:13.000Z</published>
+    <updated>2021-12-29T04:43:12.264Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;开个新坑，深度学习与神经网络。&lt;/p&gt;
+&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;什么是深度学习？深度学习能用来干什么？深度学习与神经网络的关系是什么？&lt;/p&gt;
+&lt;p&gt;深度学习</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>2021.12.28第一步</title>
