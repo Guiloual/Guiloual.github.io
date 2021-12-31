@@ -10,7 +10,7 @@
   <meta name="description" content="知识，分享，成长">
   
   <title>
-    2021.12.28第一步 |
+    逻辑回归 |
     
     Guilou的历程
   </title>
@@ -34,7 +34,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-2021-12-28第一步" class="article article-type-post" itemscope
+  <article id="post-逻辑回归" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -43,7 +43,7 @@
       
 
 <h1 class="article-title" itemprop="name">
-  2021.12.28第一步
+  逻辑回归
 </h1>
 
 
@@ -53,8 +53,8 @@
 
     
     <div class="article-meta">
-      <a href="/2021/12/28/2021-12-28%E7%AC%AC%E4%B8%80%E6%AD%A5/" class="article-date">
-  <time datetime="2021-12-28T12:48:00.000Z" itemprop="datePublished">2021-12-28</time>
+      <a href="/2021/12/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="article-date">
+  <time datetime="2021-12-30T02:56:10.000Z" itemprop="datePublished">2021-12-30</time>
 </a>
       
     </div>
@@ -70,14 +70,62 @@
       
       
       
-      <h2 id="Blog建站感言"><a href="#Blog建站感言" class="headerlink" title="Blog建站感言"></a>Blog建站感言</h2><p>2021.12.28日，经过了一个下午的调试，我的第一个属于自己的blog搭建起来了🎉🎉🎉🎉</p>
-<p>这个blog也不是多么的高大上，也就是发发牢骚，分享分享学习历程，以及总结反思（自娱自乐 逃）的地方，我开启了评论功能，我们可以在评论区讨论一些有意思的东西（在遵守法律的情况下 逃）😁😁😁</p>
-<p>建站愉快🎉🎉🎉🎉</p>
+      <p>今天的内容为逻辑回归</p>
+<h1 id="逻辑回归模型"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型</h1><p>Logistic回归（Logistic Regression，LR）是一种十分常用的处理二分类问题的线性模型。</p>
+<h2 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h2><p>我们对本节符号做如下约定：</p>
+<table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$p(\cdot)$</td>
+<td align="center">概率</td>
+</tr>
+<tr>
+<td align="left">$p(A</td>
+<td align="center">B)$</td>
+</tr>
+<tr>
+<td align="left">$g(\cdot)$</td>
+<td align="center">激活函数（activation function）</td>
+</tr>
+<tr>
+<td align="left">$\exp(\cdot)$</td>
+<td align="center">指数函数</td>
+</tr>
+<tr>
+<td align="left">$x = [x_1,x_2,\cdots,x_d]^T$</td>
+<td align="center">$\mathbb{R}^d$中的d维特征向量</td>
+</tr>
+<tr>
+<td align="left">$x =[x_1,x_2,\cdots,x_d,1]^T$</td>
+<td align="center">增广特征向量</td>
+</tr>
+<tr>
+<td align="left">$w = [w_1,w_2,\cdots,w_d]$</td>
+<td align="center">权重向量</td>
+</tr>
+<tr>
+<td align="left">$d$</td>
+<td align="center">偏置</td>
+</tr>
+<tr>
+<td align="left">$\log(\cdot)$</td>
+<td align="center">对数函数</td>
+</tr>
+</tbody></table>
+<h2 id="逻辑回归的数学模型"><a href="#逻辑回归的数学模型" class="headerlink" title="逻辑回归的数学模型"></a>逻辑回归的数学模型</h2><p>如上所说，逻辑回归是一种二分类模型，如果我们想要进行分类，那么我们最后要得到的函数就应当是一个二值函数，并且划分出所谓的决策平面。</p>
+<p>为了达到上述目的，我们引入非线性函数函数来预测输入数据的标签后验概率$p(y=1|x)$:<br>$$<br>p(y=1|x) = g(f(x;w,b))<br>$$<br>非线性的激活函数$g(\cdot)$的作用是将实数空间$\mathbb{R}$中的数压缩到$[0,1]$区间上，我们将数据经过函数后得到的值作为其等于标签$1$的后验概率，并且在上述表达式中$w$和$b$是我们要学习的参数。<br>$$<br>f(x;w,b) = wx+b<br>$$<br>上式在神经网络中又称为线性运算单元，作用只是对各个数据赋予权值，并且加上一个偏差，权重$w$可以理解为特征提取。</p>
+<p>我们选择$sigmoid(\cdot)$函数作为激活函数，$sigmiod$函数的表达式为：<br>$$<br>\sigma(x) = \frac{1}{1+\exp(-x)}<br>$$<br>我们可以验证$\sigma(x)$是落在$[0,1]$区间的。在Logistic回归中，我们用来预测标签后验概率：<br>$$<br>p(y=1|x) = \sigma(f(x;w,b)) = \frac{1}{1+\exp(-f(x;w,b))}<br>$$<br>我们采用极大似然估计数据的真实标签，我们约定$y\in{0,1}$：</p>
+<p>…….期末复习，停更……..</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://guiloual.github.io/2021/12/28/2021-12-28%E7%AC%AC%E4%B8%80%E6%AD%A5/" data-id="ckxucb4tk0002ksuocpc2bapq" class="article-share-link">
+      <a data-url="http://guiloual.github.io/2021/12/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" data-id="ckxucb4ts0003ksuohz9r3m1i" class="article-share-link">
         Share
       </a>
       
@@ -89,15 +137,11 @@
   
 <nav class="article-nav">
   
-  <a href="/2021/12/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      深度学习
-      
-    </div>
-  </a>
   
+  <a href="/2021/12/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">深度学习</div>
+  </a>
   
 </nav>
 
