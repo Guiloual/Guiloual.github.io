@@ -76,7 +76,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://guiloual.github.io/2022/01/01/year/" data-id="ckxve4hrh0003mcuo20u2d457" class="article-share-link">
+      <a data-url="http://guiloual.github.io/2022/01/01/year/" data-id="ckxvexe630001ysuo0bfr09xt" class="article-share-link">
         Share
       </a>
       
@@ -251,6 +251,21 @@
 
 <script src="/js/ocean.js"></script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

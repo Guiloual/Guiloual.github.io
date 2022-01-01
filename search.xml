@@ -1,70 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>逻辑回归</title>
-    <url>/2021/12/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
-    <content><![CDATA[<p>今天的内容为逻辑回归</p>
-<h1 id="逻辑回归模型"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型</h1><p>Logistic回归（Logistic Regression，LR）是一种十分常用的处理二分类问题的线性模型。</p>
-<h2 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h2><p>我们对本节符号做如下约定：</p>
-<table>
-<thead>
-<tr>
-<th align="left">符号</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">$p(\cdot)$</td>
-<td align="center">概率</td>
-</tr>
-<tr>
-<td align="left">$p(A</td>
-<td align="center">B)$</td>
-</tr>
-<tr>
-<td align="left">$g(\cdot)$</td>
-<td align="center">激活函数（activation function）</td>
-</tr>
-<tr>
-<td align="left">$\exp(\cdot)$</td>
-<td align="center">指数函数</td>
-</tr>
-<tr>
-<td align="left">$x = [x_1,x_2,\cdots,x_d]^T$</td>
-<td align="center">$\mathbb{R}^d$中的d维特征向量</td>
-</tr>
-<tr>
-<td align="left">$x =[x_1,x_2,\cdots,x_d,1]^T$</td>
-<td align="center">增广特征向量</td>
-</tr>
-<tr>
-<td align="left">$w = [w_1,w_2,\cdots,w_d]$</td>
-<td align="center">权重向量</td>
-</tr>
-<tr>
-<td align="left">$d$</td>
-<td align="center">偏置</td>
-</tr>
-<tr>
-<td align="left">$\log(\cdot)$</td>
-<td align="center">对数函数</td>
-</tr>
-</tbody></table>
-<h2 id="逻辑回归的数学模型"><a href="#逻辑回归的数学模型" class="headerlink" title="逻辑回归的数学模型"></a>逻辑回归的数学模型</h2><p>如上所说，逻辑回归是一种二分类模型，如果我们想要进行分类，那么我们最后要得到的函数就应当是一个二值函数，并且划分出所谓的决策平面。</p>
-<p>为了达到上述目的，我们引入非线性函数函数来预测输入数据的标签后验概率$p(y=1|x)$:<br>$$<br>p(y=1|x) = g(f(x;w,b))<br>$$<br>非线性的激活函数$g(\cdot)$的作用是将实数空间$\mathbb{R}$中的数压缩到$[0,1]$区间上，我们将数据经过函数后得到的值作为其等于标签$1$的后验概率，并且在上述表达式中$w$和$b$是我们要学习的参数。<br>$$<br>f(x;w,b) = wx+b<br>$$<br>上式在神经网络中又称为线性运算单元，作用只是对各个数据赋予权值，并且加上一个偏差，权重$w$可以理解为特征提取。</p>
-<p>我们选择$sigmoid(\cdot)$函数作为激活函数，$sigmiod$函数的表达式为：<br>$$<br>\sigma(x) = \frac{1}{1+\exp(-x)}<br>$$<br>我们可以验证$\sigma(x)$是落在$[0,1]$区间的。在Logistic回归中，我们用来预测标签后验概率：<br>$$<br>p(y=1|x) = \sigma(f(x;w,b)) = \frac{1}{1+\exp(-f(x;w,b))}<br>$$<br>我们采用极大似然估计数据的真实标签，我们约定$y\in{0,1}$：</p>
-<p>…….期末复习，停更……..</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>2021.12.28第一步</title>
-    <url>/2021/12/28/2021-12-28%E7%AC%AC%E4%B8%80%E6%AD%A5/</url>
-    <content><![CDATA[<h2 id="Blog建站感言"><a href="#Blog建站感言" class="headerlink" title="Blog建站感言"></a>Blog建站感言</h2><p>2021.12.28日，经过了一个下午的调试，我的第一个属于自己的blog搭建起来了🎉🎉🎉🎉</p>
-<p>这个blog也不是多么的高大上，也就是发发牢骚，分享分享学习历程，以及总结反思（自娱自乐 逃）的地方，我开启了评论功能，我们可以在评论区讨论一些有意思的东西（在遵守法律的情况下 逃）😁😁😁</p>
-<p>建站愉快🎉🎉🎉🎉</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Happy new year!</title>
     <url>/2022/01/01/year/</url>
     <content><![CDATA[<h1 id="新年快乐！🎉🎉🎉"><a href="#新年快乐！🎉🎉🎉" class="headerlink" title="新年快乐！🎉🎉🎉"></a>新年快乐！🎉🎉🎉</h1><p>祝大家在新的一年里学习和生活愉快！</p>
@@ -88,6 +24,83 @@
 <p>后续名词会在出现时给出明确的定义。</p>
 <h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>在关于机械学习或着说是深度学习的几乎每本书，在真正开始讨论矩体的机械学习方法之前都会介绍线性回归模型，在机械学习里面，经典的线性回归模型有：逻辑回归、支持向量机和感知机，emmm，后面两种没怎么实操过（主要我看的书很少运用到这两种模型，不过并不代表着这两种模式不重要，事实上，这两种模型在语意识别等领域非常常用），待我仔细研读操作后才来更新后面的两种模型。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>今天就到这儿吧，明天再来更新逻辑回归，以及再python上如何用手撸出逻辑回归的实现代码。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>2021.12.28第一步</title>
+    <url>/2021/12/28/2021-12-28%E7%AC%AC%E4%B8%80%E6%AD%A5/</url>
+    <content><![CDATA[<h2 id="Blog建站感言"><a href="#Blog建站感言" class="headerlink" title="Blog建站感言"></a>Blog建站感言</h2><p>2021.12.28日，经过了一个下午的调试，我的第一个属于自己的blog搭建起来了🎉🎉🎉🎉</p>
+<p>这个blog也不是多么的高大上，也就是发发牢骚，分享分享学习历程，以及总结反思（自娱自乐 逃）的地方，我开启了评论功能，我们可以在评论区讨论一些有意思的东西（在遵守法律的情况下 逃）😁😁😁</p>
+<p>建站愉快🎉🎉🎉🎉</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>逻辑回归</title>
+    <url>/2021/12/30/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
+    <content><![CDATA[<p>今天的内容为逻辑回归</p>
+<h1 id="逻辑回归模型"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型</h1><p>Logistic回归（Logistic Regression，LR）是一种十分常用的处理二分类问题的线性模型。</p>
+<h2 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h2><p>我们对本节符号做如下约定：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$p(\cdot)$</td>
+<td style="text-align:center">概率</td>
+</tr>
+<tr>
+<td style="text-align:left">$p(A</td>
+<td style="text-align:center">B)$</td>
+<td>条件概率，$A$在条件$B$下的概率</td>
+</tr>
+<tr>
+<td style="text-align:left">$g(\cdot)$</td>
+<td style="text-align:center">激活函数（activation function）</td>
+</tr>
+<tr>
+<td style="text-align:left">$\exp(\cdot)$</td>
+<td style="text-align:center">指数函数</td>
+</tr>
+<tr>
+<td style="text-align:left">$x = [x_1,x_2,\cdots,x_d]^T$</td>
+<td style="text-align:center">$\mathbb{R}^d$中的d维特征向量</td>
+</tr>
+<tr>
+<td style="text-align:left">$x =[x_1,x_2,\cdots,x_d,1]^T$</td>
+<td style="text-align:center">增广特征向量</td>
+</tr>
+<tr>
+<td style="text-align:left">$w = [w_1,w_2,\cdots,w_d]$</td>
+<td style="text-align:center">权重向量</td>
+</tr>
+<tr>
+<td style="text-align:left">$d$</td>
+<td style="text-align:center">偏置</td>
+</tr>
+<tr>
+<td style="text-align:left">$\log(\cdot)$</td>
+<td style="text-align:center">对数函数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="逻辑回归的数学模型"><a href="#逻辑回归的数学模型" class="headerlink" title="逻辑回归的数学模型"></a>逻辑回归的数学模型</h2><p>如上所说，逻辑回归是一种二分类模型，如果我们想要进行分类，那么我们最后要得到的函数就应当是一个二值函数，并且划分出所谓的决策平面。</p>
+<p>为了达到上述目的，我们引入非线性函数函数来预测输入数据的标签后验概率$p(y=1|x)$:</p>
+<script type="math/tex; mode=display">
+p(y=1|x) = g(f(x;w,b))</script><p>非线性的激活函数$g(\cdot)$的作用是将实数空间$\mathbb{R}$中的数压缩到$[0,1]$区间上，我们将数据经过函数后得到的值作为其等于标签$1$的后验概率，并且在上述表达式中$w$和$b$是我们要学习的参数。</p>
+<script type="math/tex; mode=display">
+f(x;w,b) = wx+b</script><p>上式在神经网络中又称为线性运算单元，作用只是对各个数据赋予权值，并且加上一个偏差，权重$w$可以理解为特征提取。</p>
+<p>我们选择$sigmoid(\cdot)$函数作为激活函数，$sigmiod$函数的表达式为：</p>
+<script type="math/tex; mode=display">
+\sigma(x) = \frac{1}{1+\exp(-x)}</script><p>我们可以验证$\sigma(x)$是落在$[0,1]$区间的。在Logistic回归中，我们用来预测标签后验概率：</p>
+<script type="math/tex; mode=display">
+p(y=1|x) = \sigma(f(x;w,b)) = \frac{1}{1+\exp(-f(x;w,b))}</script><p>我们采用极大似然估计数据的真实标签，我们约定$y\in\{0,1\}$：</p>
+<p>…….期末复习，停更……..</p>
 ]]></content>
   </entry>
 </search>
