@@ -6,7 +6,7 @@
   <link href="http://guiloual.github.io/atom.xml" rel="self"/>
   
   <link href="http://guiloual.github.io/"/>
-  <updated>2021-12-31T11:55:30.017Z</updated>
+  <updated>2022-01-01T05:34:19.906Z</updated>
   <id>http://guiloual.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Happy new year!</title>
+    <link href="http://guiloual.github.io/2022/01/01/year/"/>
+    <id>http://guiloual.github.io/2022/01/01/year/</id>
+    <published>2022-01-01T05:30:50.000Z</published>
+    <updated>2022-01-01T05:34:19.906Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;新年快乐！🎉🎉🎉&quot;&gt;&lt;a href=&quot;#新年快乐！🎉🎉🎉&quot; class=&quot;headerlink&quot; title=&quot;新年快乐！🎉🎉🎉&quot;&gt;&lt;/a&gt;新年快乐！🎉🎉🎉&lt;/h1&gt;&lt;p&gt;祝大家在新的一年里学习和生活愉快！&lt;/p&gt;
+&lt;p&gt;ps：昨天出了一些</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>逻辑回归</title>
